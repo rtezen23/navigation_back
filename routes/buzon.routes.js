@@ -6,6 +6,6 @@ const {
 
 const buzonRouter = express.Router();
 
-buzonRouter.post('/signup', createBuzon);
+buzonRouter.post('/', createBuzon);
 
 module.exports = { buzonRouter };

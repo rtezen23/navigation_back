@@ -1,7 +1,7 @@
 const { db, DataTypes } = require('../utils/database.util');
 
 const Buzon = db.define('buzon', {
-  id: {
+  idbuzon: {
     primaryKey: true,
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -27,6 +27,12 @@ const Buzon = db.define('buzon', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  fecha_recepcion: {
+    type: DataTypes.DATE,
+    allowNull: false
+  },
+},{
+  freezeTableName: true
 });
 
 module.exports = { Buzon };

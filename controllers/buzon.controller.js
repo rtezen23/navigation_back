@@ -1,12 +1,12 @@
 const { Buzon } = require('../models/buzon.model');
 
-const createbuzon = async (req, res, next) => {
+const createBuzon = async (req, res, next) => {
     const {
         tipo,
         nombre,
         dni,
         cargo,
-        descripcion
+        descripcion,
     } = req.body;
 
     const newbuzon = await Buzon.create({
@@ -14,7 +14,8 @@ const createbuzon = async (req, res, next) => {
         nombre,
         dni,
         cargo,
-        descripcion
+        descripcion,
+        fecha_recepcion: new Date(),
     });
 
     res.status(201).json({
@@ -24,5 +25,5 @@ const createbuzon = async (req, res, next) => {
 };
 
 module.exports = {
-    createbuzon,
+    createBuzon,
 };

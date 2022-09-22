@@ -3,6 +3,7 @@ var cors = require('cors');
 const path = require('path');
 
 const { buzonRouter } = require('./routes/buzon.routes');
+const { cumplesRouter } = require('./routes/cumples.routes');
 const { viewsRouter } = require('./routes/views.routes');
 
 const app = express();
@@ -19,6 +20,7 @@ process.on('uncaughtException', function (err) {
 }); 
 
 app.use('/api/v1/buzon', buzonRouter);
+app.use('/api/v1/cumples', cumplesRouter);
 app.use('/*', viewsRouter);
 
 module.exports = { app };   

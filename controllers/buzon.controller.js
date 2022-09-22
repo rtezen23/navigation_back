@@ -24,6 +24,18 @@ const createBuzon = async (req, res, next) => {
     });
 };
 
+const getAllBuzon = async (req, res, next) => {
+
+    const buzons = await Buzon.findAll();
+
+    res.status(200).json({
+        status: 'success',
+        buzons,
+    });
+
+};  
+
 module.exports = {
     createBuzon,
+    getAllBuzon
 };
